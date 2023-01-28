@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.DashboardPage;
+import pages.HeaderNavigate;
 import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected DashboardPage dashboardPage;
+    protected HeaderNavigate headerNavigate;
     @BeforeClass(alwaysRun = true)
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -31,6 +33,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
+        headerNavigate = new HeaderNavigate(driver);
     }
     @BeforeMethod(alwaysRun = true)
     public void navigate() {
