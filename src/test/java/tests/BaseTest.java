@@ -30,7 +30,7 @@ public class BaseTest {
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         headerNavigate = new HeaderNavigate(driver);
