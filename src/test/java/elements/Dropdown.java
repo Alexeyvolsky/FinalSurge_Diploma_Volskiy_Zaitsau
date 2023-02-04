@@ -8,15 +8,20 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class Dropdown extends BaseElement{
-    private final static String DROPDOWN_LOCATOR ="name='%s'";
+    private final static String DROPDOWN_LOCATOR = "name='%s'";
 
     public Dropdown(WebDriver driver) {
         super(driver);
     }
-    public void setDropdown(String name) {
-        Select dropDown = new Select(driver.findElement(By.name(String.format(DROPDOWN_LOCATOR, name))));
-//        List<WebElement> allOptions = dropDown.getOptions();
-        scrollIntoView(dropDown);
+
+    public void selectOption(String name, String optionName) {
+        Select dropdown = new Select(driver.findElement(By.name(String.format(DROPDOWN_LOCATOR, name))));
+        dropdown.selectByValue(optionName);
+
     }
 
+    public void selectOptionByText(String name, String optionName)   {
+        Select select = new Select(driver.findElement(By.name(String.format(DROPDOWN_LOCATOR, name))));
+        select.selectByVisibleText(optionName);
+    }
 }
