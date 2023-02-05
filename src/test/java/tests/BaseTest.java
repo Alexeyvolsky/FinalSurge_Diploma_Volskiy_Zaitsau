@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.DashboardPage;
 import pages.HeaderNavigate;
 import pages.LoginPage;
+import pages.WorkoutsPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +23,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected DashboardPage dashboardPage;
+    protected WorkoutsPage workoutsPage;
     protected HeaderNavigate headerNavigate;
     protected Intensity intensity;
     protected BaseModal baseModal;
@@ -38,6 +40,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
+        workoutsPage = new WorkoutsPage(driver);
         headerNavigate = new HeaderNavigate(driver);
         intensity = new Intensity(driver);
         baseModal = new BaseModal(driver);
