@@ -7,12 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public class Intensity extends BaseModal {
 
-    public Intensity fillForm()  {
-        new RadioButton(driver).clickRadiobutton(" Marathon");
-        new Input(driver, "TimeHH").setValue("2");
-        new Input(driver, "TimeMM").setValue("10");
-        new Input(driver, "TimeSS").setValue("10");
-        return this;
+    public void fillForm(models.WorcoutCalculators.Intensity intensity)  {
+        new RadioButton(driver).clickRadiobutton(intensity.getSelectEvent().getName());
+        new Input(driver).setValue("TimeHH", intensity.getHours());
+        new Input(driver).setValue("TimeMM", intensity.getMinutes());
+        new Input(driver).setValue("TimeSS", intensity.getSeconds());
     }
 
     public void clickCalculatePaces()   {
