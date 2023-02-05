@@ -8,6 +8,7 @@ public class LoginPage extends BasePage{
     private final static By EMAIL_INPUT = By.id("login_name");
     private final static By PASSWORD_INPUT = By.id("login_password");
     private final static By LOGIN_BUTTON = By.xpath("//button[text()='Login']");
+    private final static By LOGOUT_BUTTON = By.xpath("//div[@class='alert alert-success']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -20,5 +21,11 @@ public class LoginPage extends BasePage{
     }
     public void clickLoginButton(){
         driver.findElement(LOGIN_BUTTON).click();
+    }
+    public boolean isLoginButtonPresent() {
+        return driver.findElement(LOGIN_BUTTON).isDisplayed();
+    }
+    public boolean logoutMessagePresent(){
+        return driver.findElement(LOGOUT_BUTTON).isDisplayed();
     }
 }
