@@ -11,8 +11,8 @@ public class Input extends BaseElement{
     public Input(WebDriver driver) {
         super(driver);
     }
-    public void setValue(String value){
-        WebElement input = driver.findElement(By.id(INPUT_LOCATOR));
+    public void setValue(String id, String value){
+        WebElement input = driver.findElement(By.id(String.format(INPUT_LOCATOR, id)));
         scrollIntoView(input);
         input.sendKeys(value);
     }

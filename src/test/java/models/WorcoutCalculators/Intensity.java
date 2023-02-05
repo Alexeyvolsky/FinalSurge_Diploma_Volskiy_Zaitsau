@@ -1,13 +1,14 @@
 package models.WorcoutCalculators;
 
+import enums.SelectEvent;
 import lombok.Builder;
-import lombok.Setter;
+import lombok.Data;
 
-@Setter
+@Data
 @Builder(setterPrefix = "set")
 public class Intensity {
-    private String selectEvent;
     private String hours;
     private String minutes;
     private String seconds;
+    private SelectEvent selectEvent;
 }
