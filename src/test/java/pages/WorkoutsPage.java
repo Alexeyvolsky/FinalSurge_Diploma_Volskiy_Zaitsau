@@ -5,7 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class WorkoutsPage extends BasePage{
     private final static By SIDEBAR = By.cssSelector(".aw_sidebar");
-    private final static By REST_BUTTON = By.xpath("//a[@data-code='rest']");
+    private final static String ACTIVE_TYPE_BUTTON = "//a[@data-code='%s']";
+    private final static String ACCORDING_INNER = "//div[@class='accordion-inner']//a[text()='%s']";
 
 
     public WorkoutsPage(WebDriver driver) {
@@ -14,7 +15,10 @@ public class WorkoutsPage extends BasePage{
     public boolean isSidebarPresent(){
         return driver.findElement(SIDEBAR).isDisplayed();
     }
-    public void clickRestButton(){
-        driver.findElement(REST_BUTTON).click();
+    public void clickActiveTypeButton(String text){
+        driver.findElement(By.xpath(String.format(ACTIVE_TYPE_BUTTON,text))).click();
+    }
+    public void clickAccordingInnerButton(String text){
+        driver.findElement(By.xpath(String.format(ACCORDING_INNER, text))).click();
     }
 }

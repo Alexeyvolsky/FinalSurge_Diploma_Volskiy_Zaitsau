@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import modals.AddNewWorkoutModal;
 import modals.BaseModal;
 import modals.OtherCalculators.CaloricNeeds;
 import modals.OtherCalculators.PaceCalculator;
@@ -26,6 +27,8 @@ public class BaseTest {
     protected WorkoutsPage workoutsPage;
     protected HeaderNavigate headerNavigate;
     protected Intensity intensity;
+    protected AddNewWorkoutModal addNewWorkoutModal;
+    protected WorkoutDetailsPage workoutDetailsPage;
     protected BaseModal baseModal;
     protected Hansons hansons;
     protected McMillan mcMillan;
@@ -52,6 +55,8 @@ public class BaseTest {
         workoutsPage = new WorkoutsPage(driver);
         headerNavigate = new HeaderNavigate(driver);
         intensity = new Intensity(driver);
+        addNewWorkoutModal = new AddNewWorkoutModal(driver);
+        workoutDetailsPage = new WorkoutDetailsPage(driver);
         baseModal = new BaseModal(driver);
         hansons = new Hansons(driver);
         mcMillan = new McMillan(driver);
