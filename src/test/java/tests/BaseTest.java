@@ -2,17 +2,17 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import modals.BaseModal;
-import modals.WorkoutCalculators.Intensity;
+import modals.OtherCalculators.CaloricNeeds;
+import modals.OtherCalculators.PaceCalculator;
+import modals.PrintWorkouts;
+import modals.WorkoutCalculators.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pages.DashboardPage;
-import pages.HeaderNavigate;
-import pages.LoginPage;
-import pages.WorkoutsPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +27,15 @@ public class BaseTest {
     protected HeaderNavigate headerNavigate;
     protected Intensity intensity;
     protected BaseModal baseModal;
+    protected Hansons hansons;
+    protected McMillan mcMillan;
+    protected Tinman tinman;
+    protected Palladino palladino;
+    protected PaceCalculator paceCalculator;
+    protected CaloricNeeds caloricNeeds;
+    protected PrintWorkouts printWorkouts;
+    protected SettingPage settingPage;
+
     @BeforeClass(alwaysRun = true)
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -44,6 +53,14 @@ public class BaseTest {
         headerNavigate = new HeaderNavigate(driver);
         intensity = new Intensity(driver);
         baseModal = new BaseModal(driver);
+        hansons = new Hansons(driver);
+        mcMillan = new McMillan(driver);
+        tinman = new Tinman(driver);
+        palladino = new Palladino(driver);
+        paceCalculator = new PaceCalculator(driver);
+        caloricNeeds = new CaloricNeeds(driver);
+        printWorkouts = new PrintWorkouts(driver);
+        settingPage = new SettingPage(driver);
     }
     @BeforeMethod(alwaysRun = true)
     public void navigate() {

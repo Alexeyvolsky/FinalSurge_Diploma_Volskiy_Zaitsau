@@ -14,9 +14,6 @@ public class Intensity extends BaseModal {
         new Input(driver).setValue("TimeSS", intensity.getSeconds());
     }
 
-    public void clickCalculatePaces()   {
-        driver.findElement(CALCULATE_PACES).click();
-    }
     public Intensity(WebDriver driver) {
         super(driver);
     }
