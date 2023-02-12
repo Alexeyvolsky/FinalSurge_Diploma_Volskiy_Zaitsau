@@ -2,7 +2,7 @@ package enums;
 
 public enum DistTypePaceCalculator {
 
-    MILES("Miles"), KILOMETERS("Kilometers"), METERS("Meters"), YARDS("Yards"), FEET("Feet");
+    MILES("mi"), KILOMETERS("km"), METERS("me"), YARDS("yd"), FEET("ft");
 
     private final String name;
 

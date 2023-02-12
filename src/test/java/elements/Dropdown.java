@@ -8,14 +8,14 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class Dropdown extends BaseElement{
-    private final static String DROPDOWN_LOCATOR = "name='%s'";
+    private final static String DROPDOWN_LOCATOR = "//select[@name='%s']";
 
     public Dropdown(WebDriver driver) {
         super(driver);
     }
 
     public void selectOption(String name, String optionName) {
-        Select dropdown = new Select(driver.findElement(By.name(String.format(DROPDOWN_LOCATOR, name))));
+        Select dropdown = new Select(driver.findElement(By.xpath(String.format(DROPDOWN_LOCATOR, name))));
         dropdown.selectByValue(optionName);
 
     }
