@@ -16,4 +16,10 @@ public class Input extends BaseElement{
         scrollIntoView(input);
         input.sendKeys(value);
     }
+    public void clearAndSetValue(String id, String value){
+        WebElement input = driver.findElement(By.id(String.format(INPUT_LOCATOR, id)));
+        scrollIntoView(input);
+        input.clear();
+        input.sendKeys(value);
+    }
 }

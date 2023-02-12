@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import modals.AddNewWorkoutModal;
 import modals.BaseModal;
 import modals.WorkoutCalculators.Intensity;
 import org.openqa.selenium.WebDriver;
@@ -9,10 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import pages.DashboardPage;
-import pages.HeaderNavigate;
-import pages.LoginPage;
-import pages.WorkoutsPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +24,8 @@ public class BaseTest {
     protected WorkoutsPage workoutsPage;
     protected HeaderNavigate headerNavigate;
     protected Intensity intensity;
+    protected AddNewWorkoutModal addNewWorkoutModal;
+    protected WorkoutDetailsPage workoutDetailsPage;
     protected BaseModal baseModal;
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -43,6 +43,8 @@ public class BaseTest {
         workoutsPage = new WorkoutsPage(driver);
         headerNavigate = new HeaderNavigate(driver);
         intensity = new Intensity(driver);
+        addNewWorkoutModal = new AddNewWorkoutModal(driver);
+        workoutDetailsPage = new WorkoutDetailsPage(driver);
         baseModal = new BaseModal(driver);
     }
     @BeforeMethod(alwaysRun = true)

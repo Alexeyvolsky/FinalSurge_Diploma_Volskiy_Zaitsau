@@ -7,8 +7,9 @@ import org.openqa.selenium.interactions.Actions;
 public class DashboardPage extends BasePage{
     private final static By USER_ICON = By.id("LayoutProfilePic");
     private final static By LOGOUT_BUTTON = By.xpath("//a[text()='Logout']");
+    private final static By SETTINGS_BUTTON = By.xpath("//a[text()='Settings']");
     private final static By WORKOUTS_MENU = By.xpath("//a[text()='Workouts']");
-    private final static By ADD_WORKOUT_BUTTON = By.xpath("//a[text()='Add Workout']");
+    private final static String WORKOUTS_BUTTONS = "//a[text()='%s']";
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -23,8 +24,11 @@ public class DashboardPage extends BasePage{
         Actions actions =new Actions(driver);
         actions.moveToElement(driver.findElement(WORKOUTS_MENU)).perform();
     }
-    public void clickAddWorkoutButton(){
-        driver.findElement(ADD_WORKOUT_BUTTON).click();
+    public void clickWorkoutsButton(String text){
+        driver.findElement(By.xpath(String.format(WORKOUTS_BUTTONS, text))).click();
+    }
+    public void clickSettingsButton(){
+        driver.findElement(SETTINGS_BUTTON).click();
     }
 
 }
