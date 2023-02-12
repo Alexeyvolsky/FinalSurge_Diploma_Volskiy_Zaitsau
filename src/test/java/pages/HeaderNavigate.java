@@ -56,6 +56,10 @@ public class HeaderNavigate extends BasePage    {
         driver.findElement(FINAL_SURGE_LOGO).click();
     }
 
+    public void waitSettingButtonPresent(String name)  {
+        waitForElementDisplayed(By.xpath(String.format(USER_BOX_BUTTON, name)));
+    }
+
     public HeaderNavigate(WebDriver driver) {
         super(driver);
     }

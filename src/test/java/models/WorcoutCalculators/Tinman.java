@@ -1,14 +1,16 @@
 package models.WorcoutCalculators;
 
-import enums.SelectEvent;
+import enums.DistanceTinman;
+import enums.Gender;
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder(setterPrefix = "set")
-public class Intensity {
+public class Tinman {
+    private DistanceTinman distanceTinman;
     private String hours;
     private String minutes;
     private String seconds;
-    private SelectEvent selectEvent;
+    private Gender gender;
 }

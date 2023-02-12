@@ -2,7 +2,7 @@ package enums;
 
 public enum TempType {
 
-    FORENHEIT("°F"), CELSIUS("°C");
+    FORENHEIT("F"), CELSIUS("C");
 
     private final String name;
 
