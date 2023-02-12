@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 public class DashboardPage extends BasePage{
     private final static By USER_ICON = By.id("LayoutProfilePic");
     private final static By LOGOUT_BUTTON = By.xpath("//a[text()='Logout']");
-    private final static By SETTINGS_BUTTON = By.xpath("//a[text()='Settings']");
     private final static By WORKOUTS_MENU = By.xpath("//a[text()='Workouts']");
     private final static String WORKOUTS_BUTTONS = "//a[text()='%s']";
 
@@ -27,8 +26,4 @@ public class DashboardPage extends BasePage{
     public void clickWorkoutsButton(String text){
         driver.findElement(By.xpath(String.format(WORKOUTS_BUTTONS, text))).click();
     }
-    public void clickSettingsButton(){
-        driver.findElement(SETTINGS_BUTTON).click();
-    }
-
 }

@@ -6,6 +6,7 @@ import modals.BaseModal;
 import modals.OtherCalculators.CaloricNeeds;
 import modals.OtherCalculators.PaceCalculator;
 import modals.PrintWorkouts;
+import modals.SettingModal;
 import modals.WorkoutCalculators.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,7 +38,8 @@ public class BaseTest {
     protected PaceCalculator paceCalculator;
     protected CaloricNeeds caloricNeeds;
     protected PrintWorkouts printWorkouts;
-    protected SettingPage settingPage;
+    protected SettingDetailsPage settingDetailsPage;
+    protected SettingModal settingModal;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -65,15 +67,15 @@ public class BaseTest {
         paceCalculator = new PaceCalculator(driver);
         caloricNeeds = new CaloricNeeds(driver);
         printWorkouts = new PrintWorkouts(driver);
-        settingPage = new SettingPage(driver);
+        settingDetailsPage = new SettingDetailsPage(driver);
+        settingModal = new SettingModal(driver);
     }
     @BeforeMethod(alwaysRun = true)
     public void navigate() {
         driver.get(BASE_URL);
     }
-//    @AfterClass(alwaysRun = true)
-//    public void tearDown() {
-//        driver.quit();
-//    }
-
+    @AfterClass(alwaysRun = true)
+    public void tearDown() {
+        driver.quit();
+    }
 }
