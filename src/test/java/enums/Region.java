@@ -1,7 +1,7 @@
 package enums;
 
 public enum Region {
-
+// TODO: check after settings test value in the site
     ARIZONA("Arizona"), ARKANSAS("Arkansas"), CALIFORNIA("California"), COLORADO("Colorado"),
     CONNECTICUT("Connecticut"), FLORIDA("Florida"), HAWAII("Hawaii"), IDAHO("Idaho");
 

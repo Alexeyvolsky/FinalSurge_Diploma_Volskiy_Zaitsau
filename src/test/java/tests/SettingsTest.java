@@ -16,23 +16,22 @@ public class SettingsTest extends BaseTest  {
         loginPage.setEmailInput(USERNAME);
         loginPage.setPasswordInput(PASSWORD);
         loginPage.clickLoginButton();
-        headerNavigate.waitSettingButtonPresent("Settings");
+        headerNavigate.waitSettingButtonPresent();
     }
 
     @Test
     public void settingsTest()  {
-        headerNavigate.clickUserBoxButton("Settings");
-        settingDetailsPage.waitUserIconPresent(".img-holder .img-avatar");
-        baseModal.openIframe("");
-        settingDetailsPage.clickEditProfileButton();
-        settingDetailsPage.waitUserIconPresent("UserThumbnail");
+        headerNavigate.clickSettingsButton();
+        settingDetailsPage.waitUserIconPresent();
+        settingDetailsPage.jsClickEditProfileButton();
+        settingDetailsPage.waitUSerAvatarPresent();
         settingDetailsPage.uploadFile();
         Setting setting = Setting.builder().setGender(Gender.MALE).setBirthday("02/14/2010").setWeight("80")
                 .setWeightType(WeightType.KG).setCountry(Country.UNITED_STATE_OF_AMERICAN).setRegion(Region.CALIFORNIA)
                 .setCity("Minsk").setPostalCode("123532").build();
         settingModal.fillForm(setting);
         settingDetailsPage.clickSaveChangesButton();
-        settingDetailsPage.waitUserIconPresent(".img-holder .img-avatar");
+        settingDetailsPage.waitUSerAvatarPresent();
         Assert.assertEquals(settingDetailsPage.getSettingsDetails(), setting);
     }
 }

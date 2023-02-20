@@ -2,8 +2,8 @@ package enums;
 
 public enum DistanceTinman {
 
-    KM5("5 km"), KM10("10 km"), HALF_MARATHON("Half Marathon"), MARATHON("Marathon"),
-    METERS400("400 meters");
+    KM5("5"), KM10("10"), HALF_MARATHON("21.0974537664"), MARATHON("42.1949075328"),
+    METERS400("0.4");
 
     private final String name;
 

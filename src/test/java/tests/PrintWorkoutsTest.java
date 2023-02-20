@@ -1,6 +1,7 @@
 package tests;
 
 import models.PrintWorkout;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PrintWorkoutsTest extends BaseTest {
@@ -11,9 +12,12 @@ public class PrintWorkoutsTest extends BaseTest {
         loginPage.setPasswordInput(PASSWORD);
         loginPage.clickLoginButton();
         headerNavigate.clickPrintWorkoutButton();
-        baseModal.openIframe("PrintWorkoutsiFrame");
-        PrintWorkout printWorkoutValue = PrintWorkout.builder().setStartingData("02/01/2023").setEndingData("02/20/2023").build();
+        baseModal.openIframePrintWorkout();
+        PrintWorkout printWorkoutValue = PrintWorkout.builder().setStartingData("2/1/2023").setEndingData("2/20/2023").build();
         printWorkouts.fillForm(printWorkoutValue);
-        baseModal.clickCalculatePaces("saveButtonPrint");
+        baseModal.clickSaveButtonPrint();
+        printDetailsPage.getTabList();
+        printDetailsPage.isPrintDetailsPageIsPresent();
+        Assert.assertEquals(printDetailsPage.getPrintWorkoutData(), printWorkoutValue);
     }
 }

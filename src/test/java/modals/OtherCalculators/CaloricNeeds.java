@@ -8,13 +8,13 @@ import org.openqa.selenium.WebDriver;
 public class CaloricNeeds extends BaseModal {
 
     public void fillForm(models.OtherCalculators.CaloricNeeds caloricNeeds)  {
-        new Input(driver).setValue("Weight", caloricNeeds.getWeight());
+        new Input(driver).clearAndSetValue("Weight", caloricNeeds.getWeight());
         new RadioButton(driver).clickRadiobutton(caloricNeeds.getWeightType().getName());
-        new Input(driver).setValue("HeightInchCent", caloricNeeds.getHeight());
+        new Input(driver).clearAndSetValue("HeightInchCent", caloricNeeds.getHeight());
         new RadioButton(driver).clickRadiobutton(caloricNeeds.getHeightType().getName());
-        new Input(driver).setValue("Age", caloricNeeds.getAge());
-        new RadioButton(driver).clickRadiobutton(caloricNeeds.getGender().getName());
-        new Input(driver).setValue("RunDist", caloricNeeds.getRunDistance());
+        new Input(driver).clearAndSetValue("Age", caloricNeeds.getAge());
+        new RadioButton(driver).clickRadiobutton(caloricNeeds.getGender().getNameForCaloricNeeds());
+        new Input(driver).clearAndSetValue("RunDist", caloricNeeds.getRunDistance());
         new RadioButton(driver).clickRadiobutton(caloricNeeds.getDistTypeCaloricNeeds().getName());
     }
 

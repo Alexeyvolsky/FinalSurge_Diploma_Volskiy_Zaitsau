@@ -2,7 +2,7 @@ package enums;
 
 public enum DistTypeHansons {
 
-    MILES("mi"), KILOMETERS("km"), METERS("m");
+    MILES("mi"), KILOMETERS("km"), METERS("me");
 
     private final String name;
 
