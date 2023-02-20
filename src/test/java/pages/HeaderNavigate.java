@@ -12,7 +12,6 @@ public class HeaderNavigate extends BasePage    {
     private final static By REPORTS_AND_STATISTICS_BUTTON = By.xpath("//i[@class='icsw16-graph']");
     private final static By MAILBOX_BUTTON = By.xpath("//i[@class='icsw16-mail']");
     private final static By PRINT_WORKOUT_BUTTON = By.xpath("//i[@class='icsw16-printer']");
-    private final static By LAYOUT_PROFILE_PIC = By.id("LayoutProfilePic");
     private final static String USER_BOX_BUTTON = "//a[text()='%s']";
     private final static By FINAL_SURGE_LOGO = By.xpath("//img[@alt='Final Surge']");
 
@@ -44,20 +43,16 @@ public class HeaderNavigate extends BasePage    {
         driver.findElement(PRINT_WORKOUT_BUTTON).click();
     }
 
-    public boolean isUserIconPresent() {
-        return driver.findElement(LAYOUT_PROFILE_PIC).isDisplayed();
-    }
-
-    public void clickUserBoxButton(String name) {
-        driver.findElement(By.xpath(String.format(USER_BOX_BUTTON, name))).click();
+    public void clickSettingsButton() {
+        driver.findElement(By.xpath(String.format(USER_BOX_BUTTON, "Settings"))).click();
     }
 
     public void clickLogo() {
         driver.findElement(FINAL_SURGE_LOGO).click();
     }
 
-    public void waitSettingButtonPresent(String name)  {
-        waitForElementDisplayed(By.xpath(String.format(USER_BOX_BUTTON, name)));
+    public void waitSettingButtonPresent()  {
+        waitForElementDisplayed(By.xpath(String.format(USER_BOX_BUTTON, "Settings")));
     }
 
     public HeaderNavigate(WebDriver driver) {

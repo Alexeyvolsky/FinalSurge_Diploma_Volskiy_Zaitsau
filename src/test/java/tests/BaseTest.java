@@ -41,6 +41,7 @@ public class BaseTest {
     protected PrintWorkouts printWorkouts;
     protected SettingDetailsPage settingDetailsPage;
     protected SettingModal settingModal;
+    protected PrintDetailsPage printDetailsPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUp(){
@@ -53,6 +54,7 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get(BASE_URL);
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         workoutsPage = new WorkoutsPage(driver);
@@ -71,11 +73,9 @@ public class BaseTest {
         printWorkouts = new PrintWorkouts(driver);
         settingDetailsPage = new SettingDetailsPage(driver);
         settingModal = new SettingModal(driver);
+        printDetailsPage = new PrintDetailsPage(driver);
     }
-    @BeforeMethod(alwaysRun = true)
-    public void navigate() {
-        driver.get(BASE_URL);
-    }
+
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         driver.quit();

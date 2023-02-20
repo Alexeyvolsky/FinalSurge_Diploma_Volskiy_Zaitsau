@@ -1,7 +1,7 @@
 package enums;
 
 public enum Country {
-
+    // TODO: check after settings test value in the site
     ALBANIA("Albania"), ALGERIA("Algeria"), AMERICAN_SAMOA("American Samoa"),
     UNITED_STATE_OF_AMERICAN("United States of America"), ANGUILLA("Anguilla"),
     ANTIGUA_AND_BARBADOS("Antigua and Barbuda"), BELIZE("Belize"), BERMUDA("Bermuda"),
