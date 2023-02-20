@@ -1,5 +1,6 @@
 package pages;
 
+import models.PrintWorkout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -19,8 +20,10 @@ public class PrintDetailsPage extends BasePage   {
         return true;
     }
 
-    public String getPrintWorkoutData()  {
-        return driver.findElement(WORKOUTS_DATA).getText();
+    public PrintWorkout getPrintWorkoutData()  {
+        PrintWorkout.PrintWorkoutBuilder printWorkout = PrintWorkout.builder()
+                .setWorkoutsData(driver.findElement(WORKOUTS_DATA).getText());
+        return printWorkout.build();
     }
 
     public void getTabList()  {

@@ -33,9 +33,7 @@ public class PrintWorkout {
 
     @Override
     public String toString() {
-        return "PrintWorkout{" +
-                "workoutsData='" + workoutsData + '\'' +
-                '}';
+        return workoutsData;
     }
 
     public static class PrintWorkoutBuilder {
