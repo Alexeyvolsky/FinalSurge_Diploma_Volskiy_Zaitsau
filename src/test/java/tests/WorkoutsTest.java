@@ -45,11 +45,11 @@ public class WorkoutsTest extends BaseTest{
                 .setTimeOfDay("03:15")
                 .setWorkoutName("Alexey")
                 .setWorkoutDescription("Ahaha")
-                .setDistanceInput("33")
+                .setDistanceInput("33.00")
                 .setDistTypeHills(DistTypeHills.MILES)
-                .setDuration("00:04:56")
-                .setPace("10")
-                .setPaceType(PaceType.MIN_100Y)
+                .setDuration("4:56")
+                .setPace("0:08")
+                .setPaceType(PaceType.MIN_MI)
                 .setHowIfelt(HowIfelt.GREAT)
                 .setPerceivedEffort(PerceivedEffort.MAX_EFFORT)
                 .setMinHr("1")
@@ -60,6 +60,7 @@ public class WorkoutsTest extends BaseTest{
         addNewWorkoutModal.fillformHills(workoutValue);
         addNewWorkoutModal.clickAddWorkoutButton();
         Assert.assertTrue(workoutDetailsPage.isViewYourWorkoutPresent());
+        Assert.assertEquals(workoutValue,workoutDetailsPage.getWorkoutDetailsHills());
 
     }
 }

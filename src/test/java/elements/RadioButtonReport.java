@@ -4,12 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class RadioButton extends BaseElement{
-    private final static String RADIOBUTTON_LOCATOR = "//label[text()='%s']/input";
-    public RadioButton(WebDriver driver) {
+public class RadioButtonReport extends BaseElement{
+    private final static String RADIOBUTTON_LOCATOR = "//label[text()='%s']";
+
+    public RadioButtonReport(WebDriver driver) {
         super(driver);
     }
-    public void clickRadiobutton(String value){
+
+    public void clickReportRadiobutton(String value){
         WebElement radiobutton = driver.findElement(By.xpath(String.format(RADIOBUTTON_LOCATOR, value)));
         scrollIntoView(radiobutton);
         radiobutton.click();

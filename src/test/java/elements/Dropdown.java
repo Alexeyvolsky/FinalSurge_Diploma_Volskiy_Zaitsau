@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -19,9 +20,9 @@ public class Dropdown extends BaseElement{
         dropdown.selectByValue(optionName);
 
     }
-
     public void selectOptionByText(String name, String optionName)   {
-        Select select = new Select(driver.findElement(By.name(String.format(DROPDOWN_LOCATOR, name))));
+        Select select = new Select(driver.findElement(By.xpath(String.format(DROPDOWN_LOCATOR, name))));
         select.selectByVisibleText(optionName);
     }
+
 }

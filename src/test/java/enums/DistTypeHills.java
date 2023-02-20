@@ -1,7 +1,7 @@
 package enums;
 
 public enum DistTypeHills {
-    MILES("mi"), KILOMETERS("km"), METERS("me"), YARD("yd");
+    MILES("mi"), KILOMETERS("km"), METERS("m"), YARD("yd");
     private final String name;
 
     DistTypeHills(String name) {
