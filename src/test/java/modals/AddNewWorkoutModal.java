@@ -1,9 +1,6 @@
 package modals;
 
-import elements.Dropdown;
-import elements.Input;
-import elements.RadioButton;
-import elements.TextArea;
+import elements.*;
 import models.Hills;
 import models.Rest;
 import org.openqa.selenium.By;
@@ -27,13 +24,14 @@ public class AddNewWorkoutModal extends BaseModal{
         new Input(driver).setValue("Duration",hills.getDuration());
         new Input(driver).clearAndSetValue("Pace",hills.getPace());
         new Dropdown(driver).selectOption("PaceType",hills.getPaceType().getName());
-        new RadioButton(driver).clickRadiobuttonWorkouts(hills.getHowIfelt().getName());
+        new RadioButtonWorkouts(driver).clickRadiobuttonWorkouts(hills.getHowIfelt().getName());
         new Dropdown(driver).selectOption("PerEffort",hills.getPerceivedEffort().getName());
         new Input(driver).setValue("MinHR",hills.getMinHr());
         new Input(driver).setValue("AvgHR",hills.getAvgHr());
         new Input(driver).setValue("MaxHR", hills.getMaxHr());
         new Input(driver).setValue("kCal",hills.getCaloriesBurned());
     }
+
     public AddNewWorkoutModal(WebDriver driver) {
         super(driver);
     }

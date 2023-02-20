@@ -30,6 +30,7 @@ public class BaseTest {
     protected Intensity intensity;
     protected AddNewWorkoutModal addNewWorkoutModal;
     protected WorkoutDetailsPage workoutDetailsPage;
+    protected WorkoutReportPage workoutReportPage;
     protected BaseModal baseModal;
     protected Hansons hansons;
     protected McMillan mcMillan;
@@ -59,6 +60,7 @@ public class BaseTest {
         intensity = new Intensity(driver);
         addNewWorkoutModal = new AddNewWorkoutModal(driver);
         workoutDetailsPage = new WorkoutDetailsPage(driver);
+        workoutReportPage = new WorkoutReportPage(driver);
         baseModal = new BaseModal(driver);
         hansons = new Hansons(driver);
         mcMillan = new McMillan(driver);
